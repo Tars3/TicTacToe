@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+  font-family: helvetica;
+  font-weight: bold;
+  background-color: white;
+}
+td {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  font-size: 30px;
+  background-color: grey;
+}
+table.center {
+  margin-right: auto;
+  margin-left: auto;
+  width: center;
+  border: 20px;
+  background-color: pink;
+}
+div.reset {
+  margin-top: 20px;
+  padding-top: 20px;
+  box-shadow: 10px 10px 5px;
+  color: orange;
+}
