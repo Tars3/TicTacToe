@@ -1,4 +1,5 @@
 console.log("Is this thing on?")
+//winners and tie displayed in console.log
 
 // create objects for all the dom elements
 
