@@ -1,9 +1,5 @@
 console.log("Is this thing on?")
 
-//getElementById("b1")
-//getElementById("b2")
-//getElementById("b3")
-//getElementById("b3")
 // create objects for all the dom elements
 
 var b1 = document.getElementById("b1")
@@ -16,6 +12,7 @@ var b7 = document.getElementById("b7")
 var b8 = document.getElementById("b8")
 var b9 = document.getElementById("b9")
 var reset = document.getElementById("reset")
+var playerTurn = "X"
 
 // set appropriate click handlers
 b1.addEventListener("click", mark)
@@ -29,64 +26,57 @@ b8.addEventListener("click", mark)
 b9.addEventListener("click", mark)
 
 function mark() {
-//put an X inside this element
-  this.innerHTML = "X";
-//change player turn
-  if ()
-  console.log("Pizza rocks.")
-  console.log("another string")
+  if(this.innerHTML == ""){
+  //put an X inside this element
+    this.innerHTML = playerTurn;
+  //change player turn
+    if (playerTurn == "X") {
+      playerTurn = "O";
+    }
+    else {
+      playerTurn = "X";
+    }
+  }
+  if(b1.innerHTML == b2.innerHTML && b2.innerHTML == b3.innerHTML && b1.innerHTML != ""||
+    b4.innerHTML == b5.innerHTML && b5.innerHTML == b6.innerHTML && b4.innerHTML != ""||
+    b7.innerHTML == b8.innerHTML && b8.innerHTML == b9.innerHTML && b7.innerHTML != ""||
+    b1.innerHTML == b4.innerHTML && b4.innerHTML == b7.innerHTML && b1.innerHTML != ""||
+    b2.innerHTML == b5.innerHTML && b5.innerHTML == b8.innerHTML && b2.innerHTML != ""||
+    b7.innerHTML == b3.innerHTML && b6.innerHTML == b9.innerHTML && b3.innerHTML != ""||
+    b1.innerHTML == b5.innerHTML && b5.innerHTML == b9.innerHTML && b1.innerHTML != ""||
+    b3.innerHTML == b5.innerHTML && b5.innerHTML == b7.innerHTML && b3.innerHTML != "") {
+    var winner;
+    if(playerTurn == "O") {
+      winner = "X"
+    } else {
+      winner = "0"
+    }
+    console.log(winner + " wins!");
+    resetTable();
+}
+//if all boxes are filled and there is no winner TIE
+  if(b1.innerHTML != "" &&
+    b2.innerHTML != "" &&
+    b3.innerHTML != "" &&
+    b4.innerHTML != "" &&
+    b5.innerHTML != "" &&
+    b6.innerHTML != "" &&
+    b7.innerHTML != "" &&
+    b8.innerHTML != "" &&
+    b9.innerHTML != "") {
+    console.log("It's a Tie!")
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //function startGame() {
-// //  document.turn = "X"
-// //}
-// //function nextMove(square) {
-// //  if (square.innerHTML == "") {
-// //    square.innerHTML = document.turn;
-// //    switchTurn();
-// //  } else {
-// //    alert("Hey! Someone's already there!")
-// //  }
-// //}
-// //
-// //function switchTurn() {
-// //  if (document.turn =="X") {
-// //    else {
-// //      document.turn =="O"
-// //    }
-// //  }
-// //}
-// //
-// //function getWinner(move) {
-// //  if (checkRow()
-// //}
-// //function clickBtn(btn) {
-// //  if (player == 1) {
-// //    document.getElementById(btn).value = "X";
-// //    player -= 1;
-// //  } else {
-// //    document.getElementById(btn).value = "O";
-// //    player += 1;
-// //  }
-// //}
+reset.addEventListener("click", resetTable)
+function resetTable() {
+  b1.innerHTML = "";
+  b2.innerHTML = "";
+  b3.innerHTML = "";
+  b4.innerHTML = "";
+  b5.innerHTML = "";
+  b6.innerHTML = "";
+  b7.innerHTML = "";
+  b8.innerHTML = "";
+  b9.innerHTML = "";
+}
