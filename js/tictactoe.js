@@ -52,8 +52,8 @@ function mark() {
     } else {
       winner = "0"
     }
-    console.log(winner + " wins!");
-    resetTable();
+    alert(winner + " wins!");
+    //resetTable();
 }
 //if all boxes are filled and there is no winner TIE
   if(b1.innerHTML != "" &&
@@ -65,7 +65,7 @@ function mark() {
     b7.innerHTML != "" &&
     b8.innerHTML != "" &&
     b9.innerHTML != "") {
-    console.log("It's a Tie!")
+    alert("It's a Tie!")
   }
 }
 
